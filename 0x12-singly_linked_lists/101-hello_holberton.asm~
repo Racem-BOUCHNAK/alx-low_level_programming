@@ -1,0 +1,20 @@
+section .data
+hello_message db 'Hello, Holberton', 10   ; 10 is the newline character
+message_length equ $ - hello_message      ; Calculate the length of the message
+
+section .text
+global _start
+
+_start:
+
+    ; Write the message to stdout
+    mov rax, 1                           ; syscall: sys_write
+    mov rdi, 1                           ; file descriptor: stdout
+    mov rsi, hello_message               ; pointer to the start of our string
+    mov rdx, message_length              ; length of our string
+    syscall                              ; invoke syscall
+
+    ; Exit the program
+    mov rax, 60                          ; syscall: sys_exit
+    xor rdi, rdi                         ; status: 0
+    syscall                              ; invoke syscall

@@ -1,0 +1,15 @@
+#include "main.h"
+/**
+*_strlen - entry point of the code
+*@s:is a pointer
+* Return: Always 0 (Success)
+*/
+int _strlen(char *s)
+{
+int len;
+len = 0;
+do{
+len++;
+}while (s[len] != '\0');
+return (len);
+}

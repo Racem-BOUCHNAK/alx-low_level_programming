@@ -1,0 +1,14 @@
+#include "main.h"
+/**
+*main - entry point of the code
+*the required work
+* Return: Always 0 (Success)
+*/
+void _print_rev_recursion(char *s)
+{
+char x = *(s+1);
+if(*x)
+_print_rev_recursion(x);
+else
+return;
+}
